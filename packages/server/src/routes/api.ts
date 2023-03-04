@@ -9,5 +9,9 @@ router.get('/', (request: Request, response: Response, next: NextFunction) => {
     indexController.index(request, response, next);
 });
 
+router.get('/data', (request: Request, response: Response, next: NextFunction) => {
+    indexController.data(request, response, next);
+});
+
 
 export default router;

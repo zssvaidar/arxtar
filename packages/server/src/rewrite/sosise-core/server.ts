@@ -26,9 +26,9 @@ export default class Server {
 
         // app.use(cookieParser());
         let origin = '*';
-        if(process.env.APP_ENV === 'local') {
-            origin = 'http://localhost:10000';
-        }
+        // if(process.env.APP_ENV === 'local') {
+        //     origin = 'http://localhost:10000';
+        // }
         const corsOptions = {
             origin,
             credentials: true,

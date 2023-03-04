@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:mobile/Layout/Theme.dart';
+import 'package:mobile/api/api_service.dart';
 import 'package:provider/provider.dart';
 
 import 'models/models.dart';
 import 'navigation/app_router.dart';
 void main() {
-  print(123);
   runApp(const StatesLayer());
 }
 
@@ -29,11 +29,19 @@ class _StatesLayerState extends State<StatesLayer> {
       appStateManager: _appStateManager,
       userManager: _userManager,
     );
+    getData();
+  }
+
+  Future<void> getData () async {
+
+    var url = Uri.http('localhost:10000', 'data');
+    var response = await http.get(url);
+
+    print(response.body);
   }
 
   @override
   Widget build(BuildContext context) {
-    print(123);
     return MultiProvider(
         providers: [
           ChangeNotifierProvider(
@@ -53,7 +61,8 @@ class _StatesLayerState extends State<StatesLayer> {
           }
           return MaterialApp(
             theme: theme,
-            title: 'Flutter Demo',
+            title: 'Arxtar',
+            debugShowCheckedModeBanner: false,
             home: Router(
               routerDelegate: _appRouter,
               backButtonDispatcher: RootBackButtonDispatcher(),

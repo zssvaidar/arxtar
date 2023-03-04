@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/models/pages.dart';
 import 'package:provider/provider.dart';
-
 import '../models/models.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -34,8 +32,8 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Image(
-              height: 200,
-              image: AssetImage('assets/e162aebe-4237-41fe-85cc-9e04615b950b.png'),
+              // height: 200,
+              image: AssetImage('assets/layout/e162aebe-4237-41fe-85cc-9e04615b950b.png'),
             ),
             const Text('Initializing...')
           ],

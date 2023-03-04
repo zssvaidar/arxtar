@@ -23,4 +23,20 @@ export default class IndexController {
             next(error);
         }
     }
+
+    public async data(request: Request, response: Response, next: NextFunction) {
+        try {
+            // Prepare http response
+            const httpResponse: HttpResponse = {
+                code: 1000,
+                message: 'INDEX',
+                data: []
+            };
+            
+            // Send response
+            return response.send(httpResponse);
+        } catch (error) {
+            next(error);
+        }
+    }
 }
